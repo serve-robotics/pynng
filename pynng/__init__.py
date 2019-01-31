@@ -1,4 +1,11 @@
 # provide the API
+print('\n' * 4)
+print(__file__)
+print(__file__)
+print(__file__)
+print(__file__)
+print(__file__)
+print('\n' * 4)
 from ._nng import lib, ffi
 from .nng import (
     Bus0,
