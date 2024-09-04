@@ -81,11 +81,13 @@ class BuildNng(BuilderBase):
         super().__init__(*args, **kwargs)
         self.git_dir = "nng"
         self.cmake_extra_args = [
-            "-DNNG_ENABLE_TLS=ON",
+            "-DNNG_ENABLE_TLS=OFF",
             "-DNNG_TESTS=OFF",
             "-DNNG_TOOLS=OFF",
             "-DCMAKE_BUILD_TYPE=Release",
-            "-DMBEDTLS_ROOT_DIR={}/mbedtls/prefix/".format(THIS_DIR),
+            # "-DCMAKE_FIND_PACKAGE_PREFER_CONFIG=OFF",
+            "-DMBEDTLS_ROOT={}/mbedtls/prefix/".format(THIS_DIR),
+            # "-DMBEDTLS_ROOT_DIR={}/mbedtls/prefix/".format(THIS_DIR),
         ]
 
     def finalize_build(self):
